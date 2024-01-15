@@ -3,6 +3,7 @@ This is the grid module. It contains the Grid class and its associated methods.
 """
 
 import random
+from exceptions import InvalidGridException
 
 class Grid():
     """
@@ -55,10 +56,16 @@ class Grid():
 
     def is_sorted(self):
         """
-        Checks is the current state of the grid is sorte and returns the answer as a boolean.
+        Checks is the current state of the grid is sorted and returns the answer as a boolean.
         """
-        # TODO: implement this function (and remove the line "raise NotImplementedError").
-        raise NotImplementedError
+        for i in range(self.m):
+            for j in range(self.n):
+                if self.state[i][j] == None:
+                    raise InvalidGridException
+                expected_value = i*(self.m + 1) + j + 1
+                if self.state[i][j] != expected_value:
+                    return False
+        return True
 
     def swap(self, cell1, cell2):
         """
