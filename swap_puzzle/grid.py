@@ -3,6 +3,8 @@ This is the grid module. It contains the Grid class and its associated methods.
 """
 
 import random
+import matplotlib.pyplot as plt
+from matplotlib.colors import LinearSegmentedColormap
 from exceptions import InvalidGridException
 
 class Grid():
@@ -53,6 +55,28 @@ class Grid():
         Returns a representation of the grid with number of rows and columns.
         """
         return f"<grid.Grid: m={self.m}, n={self.n}>"
+    
+    def show(self):
+        """
+        Returns the state of the grid as a matrix with nice looks!!
+        """
+        colors = [(1, 1, 1), (1, 1, 1)]
+        cmap = LinearSegmentedColormap.from_list("white", colors)
+        fig, ax = plt.subplots()
+
+        ax.matshow(self.state, cmap=cmap)
+        for i in range(self.m):
+            for j in range(self.n):
+                value = self.state[i][j]
+                ax.text(j, i, str(value), va="center", ha="center", color="black")
+
+        ax.set_xticks([i+0.5 for i in range(self.m)])
+        ax.set_yticks([j+0.5 for j in range(self.n-1)])
+        ax.set_xticklabels(labels=[])
+        ax.set_yticklabels(labels=[])
+    
+        ax.grid()
+        plt.show()
 
     def is_sorted(self):
         """
