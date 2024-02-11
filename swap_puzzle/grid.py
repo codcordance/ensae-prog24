@@ -87,9 +87,10 @@ class Grid:
         Returns:
             None
         """
-        if not (self.is_coord_2tuple(cell1)):
+        if not self.is_coord_2tuple(cell1):
             raise sp.SwapNotAllowedException(f"Invalid cell {cell1}")
-        if not (self.is_coord_2tuple(cell2)):
+
+        if not self.is_coord_2tuple(cell2):
             raise sp.SwapNotAllowedException(f"Invalid cell {cell2}")
 
         i, j, k, l = cell1 + cell2
@@ -106,13 +107,29 @@ class Grid:
         Returns:
             None
         """
-        if not (isinstance(cell_pair_list, list)):
+        if not isinstance(cell_pair_list, list):
             raise ValueError("The given cell_pair_list is not a list !")
         for e in cell_pair_list:
             if not (isinstance(e, tuple) and len(e) == 2):
                 raise ValueError("An element of cell_pair_list is not a 2-tuple !")
 
             self.swap(*e)
+
+    def get_cell(self, i: int, j: int) -> int:
+        """
+        Get the value in the cell (i, j)
+
+        Args:
+            i: first coordinate of the cell
+            j: second coordinate of the cell
+
+        Returns:
+            Value of the cell
+        """
+
+        if not self.is_coord_2tuple((i, j)):
+            raise sp.InvalidPositionException((i, j))
+        return self.state[i][j]
 
     @classmethod
     def grid_from_file(cls, file_name):
