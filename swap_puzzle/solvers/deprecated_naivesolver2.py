@@ -7,11 +7,11 @@ class NaiveSolver2(Solver):
     A naive solver, doing swaps of adjacent cases.
     """
 
-    def __init__(self, callback: Callable[[list[tuple[tuple[int, int], tuple[int, int]]]], None] = lambda: None) -> None:
+    def __init__(self, callback: Callable[[list[tuple[Coordinates, Coordinates]]], None] = lambda: None) -> None:
         """
         Parameters
         ----------
-        callback: Callable[[list[tuple[tuple[int, int], tuple[int, int]]]], None], optional
+        callback: Callable[[list[tuple[Coordinates, Coordinates]]], None], optional
             Function called when a swap is operated on the grid. Default does nothing.
         """
         super().__init__("naive", callback=callback)

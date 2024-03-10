@@ -296,7 +296,7 @@ where i is the line and j the column number of the cell and be adjacent.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>cell_pair_list: list[tuple[tuple[int, int], tuple[int, int]]]</strong></dt><dd><p>The list of swaps, each swap being a tuple of two cells (each
+<dt><strong>cell_pair_list: list[tuple[Coordinates, Coordinates]]</strong></dt><dd><p>The list of swaps, each swap being a tuple of two cells (each
 cell being a tuple of integers).</p>
 </dd>
 </dl>
@@ -333,7 +333,7 @@ of steps.</p>
 </dd>
 <dt><strong>max_swaps: int, optional</strong></dt><dd><p>Maximum number of swaps, default is 1000</p>
 </dd>
-<dt><strong>callback: Callable[[list[tuple[tuple[int, int], tuple[int, int]]]], None], optional</strong></dt><dd><p>Function called when a swap is operated on the grid. Default does nothing.</p>
+<dt><strong>callback: Callable[[list[tuple[Coordinates, Coordinates]]], None], optional</strong></dt><dd><p>Function called when a swap is operated on the grid. Default does nothing.</p>
 </dd>
 </dl>
 </dd>
@@ -361,7 +361,7 @@ of steps.</p>
 <dd class="field-even"><dl class="simple">
 <dt>int</dt><dd><p>Number of swaps made on the grid in order to solve it.</p>
 </dd>
-<dt>list[tuple[tuple[int, int], tuple[int, int]]]</dt><dd><p>List of the swap operated on the grid in order to solve it.</p>
+<dt>list[tuple[Coordinates, Coordinates]]</dt><dd><p>List of the swap operated on the grid in order to solve it.</p>
 </dd>
 </dl>
 </dd>
