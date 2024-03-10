@@ -5,11 +5,11 @@ import unittest
 class TestInvalidGridLoading(unittest.TestCase):
     def test_no_file(self):
         with self.assertRaises(InvalidGridException):
-            Grid.grid_from_file("input/thisfiledoesnotexists.in")
+            Grid.grid_from_file("source/thisfiledoesnotexists.in")
 
     def test_invalid_file(self):
         with self.assertRaises(InvalidGridException):
-            Grid.grid_from_file("input/invalid.in")
+            Grid.grid_from_file("source/invalid.in")
 
 
 
