@@ -6,6 +6,49 @@ from swap_puzzle import *
 
 
 class SPUtils:
+
+    @staticmethod
+    def adjacent(i: int, j: int, k: int, l: int, raiser=False) -> bool:
+        if i == k:
+            if l - j not in (1, -1):
+                if raiser:
+                    raise SwapNotAllowedException("the cells are on the same line but are not one column apart !")
+                return False
+            return True
+        elif j == l:
+            if k - i not in (1, -1):
+                if raiser:
+                    raise SwapNotAllowedException("the cells are on the same column but are not one line apart !")
+                return False
+            return True
+        if raiser:
+            raise SwapNotAllowedException("the cells are neither on the same line nor on the same column !")
+        return False
+
+    @staticmethod
+    def cell_difference(s1: state, s2: state) -> list[cell]:
+        diff = []
+        for i in range(len(s1)):
+            for j in range(len(s1[0])):
+                if s1[i][j] != s2[i][j]:
+                    diff.append((i, j))
+        return diff
+
+    @staticmethod
+    def neighbour_states(s1: state, s2: state) -> bool:
+        diff = SPUtils.cell_difference(s1, s2)
+        if len(diff) != 2: return False
+        for i in diff:
+            for j in diff:
+                if i != j and SPUtils.adjacent(*i, *j):
+                    return True
+        return False
+
+    @staticmethod
+    def swap_between_states(s1: state, s2: state) -> tuple[cell, cell]:
+        diff = SPUtils.cell_difference(s1, s2)
+        return diff[0], diff[1]
+
     @staticmethod
     def permutations(l: list) -> list[list]:
         """
@@ -34,19 +77,9 @@ class SPUtils:
     @staticmethod
     def dict_possible_states(m: int, n: int) -> dict[str, state]:
         mn = m * n
-        states = SPUtils.permutations(list(range(1, n * m + 1)))
-        states = [[s[i:i + n] for i in range(0, m * n, n)] for s in states]
+        states = SPUtils.permutations(list(range(1, mn + 1)))
+        states = [[s[i:i + n] for i in range(0, mn, n)] for s in states]
         return {SPUtils.state_to_str(s): s for s in states}
-
-    @staticmethod
-    def get_swap_between_states(s1: state, s2: state) -> tuple[cell, cell]:
-        m, n = len(s1), len(s1[0])
-        diff = []
-        for i in range(len(s1)):
-            for j in range(len(s1[0])):
-                if s1[i][j] != s2[i][j]:
-                    diff.append((i, j))
-        return diff[0], diff[1]
 
     @staticmethod
     def state_to_str(s: state) -> str:

@@ -12,10 +12,9 @@ cell = tuple[int, int]
 state = list[list[int]]
 
 from swap_puzzle.exception import *
-from grid import Grid
 from sp_utils import SPUtils
+from graph import Graph
+from grid import Grid
 
 from solver import Solver
 from swap_puzzle.solvers import *
-
-from graph import Graph

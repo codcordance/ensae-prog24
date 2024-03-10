@@ -133,14 +133,7 @@ class Grid:
 
         i, j, k, l = cell1 + cell2
 
-        if i == k:
-            if l - j not in (1, -1):
-                raise SwapNotAllowedException("the cells are on the same line but are not one column apart !")
-        elif j == l:
-            if k - i not in (1, -1):
-                raise SwapNotAllowedException("the cells are on the same column but are not one line apart !")
-        else:
-            raise SwapNotAllowedException("the cells are neither on the same line nor on the same column !")
+        SPUtils.adjacent(i, j, k, l, raiser=True)
         self.state[i][j], self.state[k][l] = self.state[k][l], self.state[i][j]
 
     def swap_seq(self, cell_pair_list: list[tuple[cell, cell]]) -> None:
