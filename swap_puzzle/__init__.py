@@ -4,6 +4,7 @@
 
 import os
 from collections.abc import Callable
+from collections import deque
 from abc import ABC, abstractmethod
 
 # type-hinting typedefs
@@ -16,4 +17,4 @@ from grid import Grid
 from solver import Solver
 from swap_puzzle.solvers import *
 
-
+from graph import Graph

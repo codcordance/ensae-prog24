@@ -1,3 +1,5 @@
+from swap_puzzle import *
+
 """
     This is the graph module.
 """
@@ -13,7 +15,7 @@ class Graph:
         A list of nodes. Nodes can be of any immutable type, e.g., integer, float, or string.
         We will usually use a list of integers 1, ..., n.
     graph: dict
-        A dictionnary that contains the adjacency list of each node in the form
+        A dictionary that contains the adjacency list of each node in the form
         graph[node] = [neighbor1, neighbor2, ...]
     nb_nodes: int
         The number of nodes.
@@ -23,7 +25,7 @@ class Graph:
         The list of all edges
     """
 
-    def __init__(self, nodes=[]):
+    def __init__(self, nodes=None):  # little change with =None to avoid default mutable argument
         """
         Initializes the graph with a set of nodes, and no edges. 
 
@@ -32,8 +34,10 @@ class Graph:
         nodes: list, optional
             A list of nodes. Default is empty.
         """
+        if nodes is None:
+            nodes = []
         self.nodes = nodes
-        self.graph = dict([(n, []) for n in nodes])
+        self.graph = {n: [] for n in nodes}  # changed to dictionary comprehension
         self.nb_nodes = len(nodes)
         self.nb_edges = 0
         self.edges = []
@@ -98,8 +102,23 @@ class Graph:
         path: list[NodeType] | None
             The shortest path from src to dst. Returns None if dst is not reachable from src
         """
-        # TODO: implement this function (and remove the line "raise NotImplementedError").
-        raise NotImplementedError
+        visited = {src: None}  # already visited nodes
+        queue = deque([src])  # queue of nodes
+
+        while queue:
+            node = queue.popleft()
+            if node == dst:
+                path = []
+                while node is not None:
+                    path.append(node)
+                    node = visited[node]
+                return path[::-1]  # Reverse the path, for it to be from src to dst
+            for neighbor in self.graph[node]:
+                if neighbor not in visited:
+                    visited[neighbor] = node
+                    queue.append(neighbor)
+
+        raise BFSNoPathException(src, dst)
 
     @classmethod
     def graph_from_file(cls, file_name):
@@ -132,3 +151,9 @@ class Graph:
                 else:
                     raise Exception("Format incorrect")
         return graph
+
+
+
+if __name__ == '__main__':
+    g = Graph.graph_from_file("../input/graph1.in")
+    print(g.bfs(4, 19))
