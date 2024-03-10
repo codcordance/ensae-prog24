@@ -4,6 +4,14 @@ swap\_puzzle.exception package
 Submodules
 ----------
 
+swap\_puzzle.exception.bfs\_no\_path\_exception module
+------------------------------------------------------
+
+.. automodule:: swap_puzzle.exception.bfs_no_path_exception
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 swap\_puzzle.exception.invalid\_grid\_exception module
 ------------------------------------------------------
 

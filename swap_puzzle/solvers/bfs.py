@@ -6,7 +6,7 @@ class BFSSolver(Solver):
     A naive solver, doing swaps of adjacent cases.
     """
 
-    def _work(self, m: int, n: int, state: state, acc: any) -> (list[tuple[cell, cell]], any):
+    def _work(self, m: int, n: int, state: state, acc: object) -> (list[tuple[cell, cell]], object):
         """
         Parameters
         ----------

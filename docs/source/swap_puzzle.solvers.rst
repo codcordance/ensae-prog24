@@ -4,6 +4,14 @@ swap\_puzzle.solvers package
 Submodules
 ----------
 
+swap\_puzzle.solvers.bfs module
+-------------------------------
+
+.. automodule:: swap_puzzle.solvers.bfs
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 swap\_puzzle.solvers.deprecated\_naivesolver module
 ---------------------------------------------------
 

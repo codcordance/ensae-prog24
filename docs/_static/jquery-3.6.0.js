@@ -2616,14 +2616,14 @@ function matcherFromTokens( tokens ) {
 		matchContext = addCombinator( function( elem ) {
 			return elem === checkContext;
 		}, implicitRelative, true ),
-		matchanyContext = addCombinator( function( elem ) {
+		matchAnyContext = addCombinator( function( elem ) {
 			return indexOf( checkContext, elem ) > -1;
 		}, implicitRelative, true ),
 		matchers = [ function( elem, context, xml ) {
 			var ret = ( !leadingRelative && ( xml || context !== outermostContext ) ) || (
 				( checkContext = context ).nodeType ?
 					matchContext( elem, context, xml ) :
-					matchanyContext( elem, context, xml ) );
+					matchAnyContext( elem, context, xml ) );
 
 			// Avoid hanging onto element (issue #299)
 			checkContext = null;
@@ -4226,7 +4226,7 @@ var acceptData = function( owner ) {
 	//    - Node.ELEMENT_NODE
 	//    - Node.DOCUMENT_NODE
 	//  - Object
-	//    - any
+	//    - Any
 	return owner.nodeType === 1 || owner.nodeType === 9 || !( +owner.nodeType );
 };
 
@@ -6694,7 +6694,7 @@ var
 
 function setPositiveNumber( _elem, value, subtract ) {
 
-	// any relative (+/-) values have already been
+	// Any relative (+/-) values have already been
 	// normalized at this point
 	var matches = rcssNum.exec( value );
 	return matches ?

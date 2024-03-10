@@ -13,6 +13,7 @@ state = list[list[int]]
 
 from swap_puzzle.exception import *
 from grid import Grid
+from sp_utils import SPUtils
 
 from solver import Solver
 from swap_puzzle.solvers import *

@@ -50,6 +50,7 @@
 <li class="toctree-l3"><a class="reference internal" href="swap_puzzle.exception.html">swap_puzzle.exception package</a></li>
 <li class="toctree-l3 current"><a class="current reference internal" href="#">swap_puzzle.solvers package</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#module-swap_puzzle.solvers.bfs">swap_puzzle.solvers.bfs module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-swap_puzzle.solvers.deprecated_naivesolver">swap_puzzle.solvers.deprecated_naivesolver module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#swap-puzzle-solvers-deprecated-naivesolver2-module">swap_puzzle.solvers.deprecated_naivesolver2 module</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#module-swap_puzzle.solvers.naive">swap_puzzle.solvers.naive module</a></li>
@@ -63,6 +64,7 @@
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.html#module-swap_puzzle.grid">swap_puzzle.grid module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.html#module-swap_puzzle.main">swap_puzzle.main module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.html#module-swap_puzzle.solver">swap_puzzle.solver module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.html#module-swap_puzzle.sp_utils">swap_puzzle.sp_utils module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.html#module-swap_puzzle">Module contents</a></li>
 </ul>
 </li>
@@ -98,6 +100,24 @@
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
 </section>
+<section id="module-swap_puzzle.solvers.bfs">
+<span id="swap-puzzle-solvers-bfs-module"></span><h2>swap_puzzle.solvers.bfs module<a class="headerlink" href="#module-swap_puzzle.solvers.bfs" title="Permalink to this heading"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="swap_puzzle.solvers.bfs.BFSSolver">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">swap_puzzle.solvers.bfs.</span></span><span class="sig-name descname"><span class="pre">BFSSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">callback:</span> <span class="pre">~collections.abc.Callable[[list[tuple[tuple[int,</span> <span class="pre">int],</span> <span class="pre">tuple[int,</span> <span class="pre">int]]]],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">BFSSolver.&lt;lambda&gt;&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.solvers.bfs.BFSSolver" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></p>
+<p>A naive solver, doing swaps of adjacent cases.</p>
+<p class="rubric">Methods</p>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(g[, init_acc])</p></td>
+<td><p>Solve a grid.</p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</section>
 <section id="module-swap_puzzle.solvers.deprecated_naivesolver">
 <span id="swap-puzzle-solvers-deprecated-naivesolver-module"></span><h2>swap_puzzle.solvers.deprecated_naivesolver module<a class="headerlink" href="#module-swap_puzzle.solvers.deprecated_naivesolver" title="Permalink to this heading"></a></h2>
 <dl class="py class">
@@ -111,7 +131,7 @@
 <tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.solvers.deprecated_naivesolver.NaiveSolver.snake" title="swap_puzzle.solvers.deprecated_naivesolver.NaiveSolver.snake"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snake</span></code></a>(p)</p></td>
 <td><p>Return the coordinates of the p-th case if we iterate the case in a &quot;snake&quot; way.</p></td>
 </tr>
-<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(g)</p></td>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(g[, init_acc])</p></td>
 <td><p>Solve a grid.</p></td>
 </tr>
 </tbody>
@@ -162,7 +182,7 @@ in a “snake” way. For instance on a 3x3 grid, the cases would be :</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(g)</p></td>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code>(g[, init_acc])</p></td>
 <td><p>Solve a grid.</p></td>
 </tr>
 </tbody>

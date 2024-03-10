@@ -45,6 +45,14 @@ swap\_puzzle.solver module
    :undoc-members:
    :show-inheritance:
 
+swap\_puzzle.sp\_utils module
+-----------------------------
+
+.. automodule:: swap_puzzle.sp_utils
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 Module contents
 ---------------
 

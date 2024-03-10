@@ -36,7 +36,7 @@ class Solver(ABC):
         self.callback: Callable[[list[tuple[cell, cell]]], None] = callback
 
     @abstractmethod
-    def _work(self, m: int, n: int, state: state, acc: any) -> (list[tuple[cell, cell]], any):
+    def _work(self, m: int, n: int, state: state, acc: object) -> (list[tuple[cell, cell]], object):
         """
         Function to be implemented in the solver. Take the information of a grid (not the grid object itself)
         and returns a list of 2-tuple of coordinates representing the swaps to be made on the grid.
@@ -51,7 +51,7 @@ class Solver(ABC):
         state: State
             The state of the grid, a list of list such that state[i][j] is the number in the cell (i, j), i.e., in the
             i-th line and j-th column.
-        acc: any
+        acc: object
             The accumulator.
 
         Returns
@@ -63,7 +63,7 @@ class Solver(ABC):
         """
         pass
 
-    def solve(self, g: Grid, init_acc: any = None) -> (int, list[tuple[cell, cell]]):
+    def solve(self, g: Grid, init_acc: object = None) -> (int, list[tuple[cell, cell]]):
         """
         Solve a grid. Call the callback on each swap.
 
@@ -71,7 +71,7 @@ class Solver(ABC):
         ----------
         g: Grid
             Grid to be solved.
-        init_acc: any, optional
+        init_acc: object, optional
             Initial value for the accumulator, None by default
 
         Returns

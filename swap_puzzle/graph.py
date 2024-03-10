@@ -1,9 +1,8 @@
-from swap_puzzle import *
-
 """
     This is the graph module.
 """
 
+from swap_puzzle import *
 
 class Graph:
     """
