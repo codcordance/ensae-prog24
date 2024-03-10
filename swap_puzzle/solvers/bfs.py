@@ -11,9 +11,16 @@ class BFSSolver(Solver):
         Parameters
         ----------
         acc:
-            Here the accumulator is
+            Here the solver give all the swaps in one call to _work, so the accumulator is not used.
         """
-        return [], ()
+        d = SPUtils.dict_possible_states(m, n)
+        src, dst = state, next(iter(d.values()))
+        g = Graph(d.keys())
+
+        # TODO: add edges
+
+        swaps = [SPUtils.get_swap_between_states(d[e[0]], d[e[1]]) for e in g.bfs(src, dst)]
+        return swaps, None
 
     def __init__(self, callback: Callable[[list[tuple[cell, cell]]], None] = lambda _: None) -> None:
         """
@@ -23,3 +30,4 @@ class BFSSolver(Solver):
             Function called when a swap is operated on the grid. Default does nothing.
         """
         super().__init__("naive", callback=callback)
+#%%

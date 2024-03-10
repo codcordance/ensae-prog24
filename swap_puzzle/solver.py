@@ -96,7 +96,7 @@ class Solver(ABC):
             if g.is_sorted():
                 return n, swaps
 
-            if True: #try
+            try:
                 call_swaps, acc = self._work(g.m, g.n, g.state, acc)
                 i = len(call_swaps)
                 if i < 1:
@@ -105,5 +105,5 @@ class Solver(ABC):
                 swaps.extend(call_swaps)
                 self.callback(call_swaps)
                 n += i
-            #except Exception as e:
-            #    raise SolverWorkException(self.name, e)
+            except Exception as e:
+                raise SolverWorkException(self.name, str(e))
