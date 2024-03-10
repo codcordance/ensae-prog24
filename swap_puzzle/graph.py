@@ -1,6 +1,7 @@
 """
-This is the graph module. It contains a minimalistic Graph class.
+    This is the graph module.
 """
+
 
 class Graph:
     """
@@ -31,25 +32,25 @@ class Graph:
         nodes: list, optional
             A list of nodes. Default is empty.
         """
-        self.nodes = nodes 
+        self.nodes = nodes
         self.graph = dict([(n, []) for n in nodes])
         self.nb_nodes = len(nodes)
         self.nb_edges = 0
         self.edges = []
-        
+
     def __str__(self):
         """
         Prints the graph as a list of neighbors for each node (one per line)
         """
         if not self.graph:
-            output = "The graph is empty"            
+            output = "The graph is empty"
         else:
             output = f"The graph has {self.nb_nodes} nodes and {self.nb_edges} edges.\n"
             for source, destination in self.graph.items():
                 output += f"{source}-->{destination}\n"
         return output
 
-    def __repr__(self): 
+    def __repr__(self):
         """
         Returns a representation of the graph with number of nodes and edges.
         """
@@ -81,7 +82,7 @@ class Graph:
         self.nb_edges += 1
         self.edges.append((node1, node2))
 
-    def bfs(self, src, dst): 
+    def bfs(self, src, dst):
         """
         Finds a shortest path from src to dst by BFS.  
 
@@ -96,7 +97,7 @@ class Graph:
         -------
         path: list[NodeType] | None
             The shortest path from src to dst. Returns None if dst is not reachable from src
-        """ 
+        """
         # TODO: implement this function (and remove the line "raise NotImplementedError").
         raise NotImplementedError
 
@@ -122,13 +123,12 @@ class Graph:
         """
         with open(file_name, "r") as file:
             n, m = map(int, file.readline().split())
-            graph = Graph(range(1, n+1))
+            graph = Graph(range(1, n + 1))
             for _ in range(m):
                 edge = list(map(int, file.readline().split()))
                 if len(edge) == 2:
                     node1, node2 = edge
-                    graph.add_edge(node1, node2) # will add dist=1 by default
+                    graph.add_edge(node1, node2)  # will add dist=1 by default
                 else:
                     raise Exception("Format incorrect")
         return graph
-

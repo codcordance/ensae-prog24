@@ -58,7 +58,7 @@ class NaiveSolver2(Solver):
         grid = list(g.state)
 
         for i in range(g.m):
-            if i % 2 == 1: self._reverse_arr(grid[i])
+            if i % 2 == 1: self.reverse_arr(grid[i])
 
         flat_grid = sum(grid, [])
         return flat_grid

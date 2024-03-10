@@ -1,12 +1,13 @@
-from grid import Grid
+from swap_puzzle import *
 
-g = Grid(2, 3)
-print(g)
+if __name__ == '__main__':
+    g: Grid = Grid(2, 3)
+    print(g)
 
-data_path = "../input/"
-file_name = data_path + "grid0.in"
+    data_path: str = "../input/"
+    file_name: str = data_path + "grid0.in"
 
-print(file_name)
+    print(file_name)
 
-g = Grid.grid_from_file(file_name)
-print(g)
+    g: Grid = Grid.grid_from_file(file_name)
+    print(g)
