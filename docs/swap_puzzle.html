@@ -49,14 +49,13 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">swap_puzzle package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="swap_puzzle.exception.html">swap_puzzle.exception package</a></li>
+<li class="toctree-l3"><a class="reference internal" href="swap_puzzle.solvers.html">swap_puzzle.solvers package</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.graph">swap_puzzle.graph module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.grid">swap_puzzle.grid module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.main">swap_puzzle.main module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.naivesolver">swap_puzzle.naivesolver module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.naivesolver2">swap_puzzle.naivesolver2 module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.solver">swap_puzzle.solver module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle">Module contents</a></li>
 </ul>
@@ -95,10 +94,19 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="swap_puzzle.exception.html">swap_puzzle.exception package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#submodules">Submodules</a></li>
-<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.InvalidGridException">swap_puzzle.exception.InvalidGridException module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.InvalidPositionException">swap_puzzle.exception.InvalidPositionException module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.SwapNotAllowedException">swap_puzzle.exception.SwapNotAllowedException module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_grid_exception">swap_puzzle.exception.invalid_grid_exception module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_position_exception">swap_puzzle.exception.invalid_position_exception module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.solver_work_exception">swap_puzzle.exception.solver_work_exception module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.swap_not_allowed_exception">swap_puzzle.exception.swap_not_allowed_exception module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="swap_puzzle.solvers.html">swap_puzzle.solvers package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.deprecated_naivesolver">swap_puzzle.solvers.deprecated_naivesolver module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#swap-puzzle-solvers-deprecated-naivesolver2-module">swap_puzzle.solvers.deprecated_naivesolver2 module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.naive">swap_puzzle.solvers.naive module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -283,18 +291,20 @@ where i is the line and j the column number of the cell and be adjacent.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="swap_puzzle.grid.Grid.swap_seq">
-<span class="sig-name descname"><span class="pre">swap_seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_pair_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#swap_puzzle.grid.Grid.swap_seq" title="Permalink to this definition"></a></dt>
+<span class="sig-name descname"><span class="pre">swap_seq</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">cell_pair_list</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#swap_puzzle.grid.Grid.swap_seq" title="Permalink to this definition"></a></dt>
 <dd><p>Executes a sequence of swaps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>cell_pair_list: list[tuple]</strong></dt><dd><p>The list of swaps, each swap being a tuple of two cells (each
+<dt><strong>cell_pair_list: list[tuple[tuple[int, int], tuple[int, int]]]</strong></dt><dd><p>The list of swaps, each swap being a tuple of two cells (each
 cell being a tuple of integers).</p>
 </dd>
 </dl>
 </dd>
 <dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><dl class="simple">
+<dt>InvalidPositionException</dt><dd><p>Raised by the swap method. If one of the given parameters corresponds to an invalid cell coordinates.</p>
+</dd>
 <dt>SwapNotAllowedException</dt><dd><p>Raised if the given list of swaps is not a valid list of 2-tuples, or if a swap is not allowed.</p>
 </dd>
 </dl>
@@ -308,161 +318,61 @@ cell being a tuple of integers).</p>
 <section id="module-swap_puzzle.main">
 <span id="swap-puzzle-main-module"></span><h2>swap_puzzle.main module<a class="headerlink" href="#module-swap_puzzle.main" title="Permalink to this heading"></a></h2>
 </section>
-<section id="module-swap_puzzle.naivesolver">
-<span id="swap-puzzle-naivesolver-module"></span><h2>swap_puzzle.naivesolver module<a class="headerlink" href="#module-swap_puzzle.naivesolver" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver.NaiveSolver">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">swap_puzzle.naivesolver.</span></span><span class="sig-name descname"><span class="pre">NaiveSolver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#swap_puzzle.grid.Grid" title="swap_puzzle.grid.Grid"><span class="pre">Grid</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.naivesolver.NaiveSolver" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></p>
-<p>A naive solver, doing swaps of adjacent cases.</p>
-<p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.naivesolver.NaiveSolver.snake" title="swap_puzzle.naivesolver.NaiveSolver.snake"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snake</span></code></a>(p)</p></td>
-<td><p>Return the coordinates of the p-th case if we iterate the case in a &quot;snake&quot; way.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><strong>get_solution</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver.NaiveSolver.get_solution">
-<span class="sig-name descname"><span class="pre">get_solution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#swap_puzzle.naivesolver.NaiveSolver.get_solution" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver.NaiveSolver.snake">
-<span class="sig-name descname"><span class="pre">snake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.naivesolver.NaiveSolver.snake" title="Permalink to this definition"></a></dt>
-<dd><p>Return the coordinates of the p-th case if we iterate the case
-in a “snake” way. For instance on a 3x3 grid, the cases would be :</p>
-<p>1 2 3
-6 5 4
-7 8 9</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p</strong> – an integer for the p-th case</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The p-th case (i, j) coordinates</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
-<section id="module-swap_puzzle.naivesolver2">
-<span id="swap-puzzle-naivesolver2-module"></span><h2>swap_puzzle.naivesolver2 module<a class="headerlink" href="#module-swap_puzzle.naivesolver2" title="Permalink to this heading"></a></h2>
-<dl class="py class">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver2.NaiveSolver2">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">swap_puzzle.naivesolver2.</span></span><span class="sig-name descname"><span class="pre">NaiveSolver2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#swap_puzzle.grid.Grid" title="swap_puzzle.grid.Grid"><span class="pre">Grid</span></a></span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.naivesolver2.NaiveSolver2" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Solver</span></code></p>
-<p>A naive solver, doing swaps of adjacent cases.</p>
-<p class="rubric">Methods</p>
-<table class="autosummary longtable docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.naivesolver2.NaiveSolver2.get_solution" title="swap_puzzle.naivesolver2.NaiveSolver2.get_solution"><code class="xref py py-obj docutils literal notranslate"><span class="pre">get_solution</span></code></a>()</p></td>
-<td><p>Solves the grid and returns the sequence of swaps at the format [((i1, j1), (i2, j2)), ((i1', j1'), (i2', j2')), ...].</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#swap_puzzle.naivesolver2.NaiveSolver2.grid_to_arr" title="swap_puzzle.naivesolver2.NaiveSolver2.grid_to_arr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">grid_to_arr</span></code></a>(g)</p></td>
-<td><p>Returns a flattened grid with correct junctions between lines [[1,2,3],[4,5,6]] -&gt; [1,2,3,6,5,4]</p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.naivesolver2.NaiveSolver2.reverse_arr" title="swap_puzzle.naivesolver2.NaiveSolver2.reverse_arr"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reverse_arr</span></code></a>(arr)</p></td>
-<td><p>Reverses the elements of a list, modifies the list directly.</p></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference internal" href="#swap_puzzle.naivesolver2.NaiveSolver2.snake" title="swap_puzzle.naivesolver2.NaiveSolver2.snake"><code class="xref py py-obj docutils literal notranslate"><span class="pre">snake</span></code></a>(p)</p></td>
-<td><p>Return the coordinates of the p-th case if we iterate the case in a &quot;snake&quot; way.</p></td>
-</tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><strong>insertion_sort</strong></p></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver2.NaiveSolver2.get_solution">
-<span class="sig-name descname"><span class="pre">get_solution</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#swap_puzzle.naivesolver2.NaiveSolver2.get_solution" title="Permalink to this definition"></a></dt>
-<dd><p>Solves the grid and returns the sequence of swaps at the format
-[((i1, j1), (i2, j2)), ((i1’, j1’), (i2’, j2’)), …].</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver2.NaiveSolver2.grid_to_arr">
-<span class="sig-name descname"><span class="pre">grid_to_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">g</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#swap_puzzle.grid.Grid" title="swap_puzzle.grid.Grid"><span class="pre">Grid</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#swap_puzzle.naivesolver2.NaiveSolver2.grid_to_arr" title="Permalink to this definition"></a></dt>
-<dd><p>Returns a flattened grid with correct junctions between lines
-[[1,2,3],[4,5,6]] -&gt; [1,2,3,6,5,4]</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver2.NaiveSolver2.insertion_sort">
-<span class="sig-name descname"><span class="pre">insertion_sort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span></span></span><a class="headerlink" href="#swap_puzzle.naivesolver2.NaiveSolver2.insertion_sort" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver2.NaiveSolver2.reverse_arr">
-<span class="sig-name descname"><span class="pre">reverse_arr</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">arr</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.naivesolver2.NaiveSolver2.reverse_arr" title="Permalink to this definition"></a></dt>
-<dd><p>Reverses the elements of a list, modifies the list directly.</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.naivesolver2.NaiveSolver2.snake">
-<span class="sig-name descname"><span class="pre">snake</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">p:</span> <span class="pre">int)</span> <span class="pre">-&gt;</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">&lt;class</span> <span class="pre">'int'&gt;</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.naivesolver2.NaiveSolver2.snake" title="Permalink to this definition"></a></dt>
-<dd><p>Return the coordinates of the p-th case if we iterate the case
-in a “snake” way. For instance on a 3x3 grid, the cases would be :</p>
-<p>1 2 3
-6 5 4
-7 8 9</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>p</strong> – an integer for the p-th case</p>
-</dd>
-<dt class="field-even">Returns<span class="colon">:</span></dt>
-<dd class="field-even"><p>The p-th case (i, j) coordinates</p>
-</dd>
-</dl>
-</dd></dl>
-
-</dd></dl>
-
-</section>
 <section id="module-swap_puzzle.solver">
 <span id="swap-puzzle-solver-module"></span><h2>swap_puzzle.solver module<a class="headerlink" href="#module-swap_puzzle.solver" title="Permalink to this heading"></a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="swap_puzzle.solver.Solver">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">swap_puzzle.solver.</span></span><span class="sig-name descname"><span class="pre">Solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">max_calls:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1000,</span> <span class="pre">callback:</span> <span class="pre">~collections.abc.Callable[[(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;),</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">&lt;class</span> <span class="pre">'int'&gt;)],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">Solver.&lt;lambda&gt;&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.solver.Solver" title="Permalink to this definition"></a></dt>
-<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
-<p>Solver class. Helps control the permitted operations on the grid and retrieve the list
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">swap_puzzle.solver.</span></span><span class="sig-name descname"><span class="pre">Solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">name:</span> <span class="pre">str,</span> <span class="pre">max_swaps:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">1000,</span> <span class="pre">callback:</span> <span class="pre">~collections.abc.Callable[[list[tuple[tuple[int,</span> <span class="pre">int],</span> <span class="pre">tuple[int,</span> <span class="pre">int]]]],</span> <span class="pre">None]</span> <span class="pre">=</span> <span class="pre">&lt;function</span> <span class="pre">Solver.&lt;lambda&gt;&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.solver.Solver" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">ABC</span></code></p>
+<p>Abstract solver class. Helps control the permitted operations on the grid and retrieve the list
 of steps.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Attributes<span class="colon">:</span></dt>
 <dd class="field-odd"><dl class="simple">
-<dt><strong>max_calls: int, optional</strong></dt><dd><p>Maximum number of calls, default is 1000</p>
+<dt><strong>name: str</strong></dt><dd><p>Name of the solver implementation</p>
 </dd>
-<dt><strong>callback: Callable[[(int, int), (int, int)], None], optional</strong></dt><dd><p>Function called when a swap is operated on the grid. Default does nothing.</p>
+<dt><strong>max_swaps: int, optional</strong></dt><dd><p>Maximum number of swaps, default is 1000</p>
+</dd>
+<dt><strong>callback: Callable[[list[tuple[tuple[int, int], tuple[int, int]]]], None], optional</strong></dt><dd><p>Function called when a swap is operated on the grid. Default does nothing.</p>
 </dd>
 </dl>
 </dd>
 </dl>
 <p class="rubric">Methods</p>
-<table class="docutils align-default">
+<table class="autosummary longtable docutils align-default">
 <tbody>
-<tr class="row-odd"><td><p><strong>get_solution</strong></p></td>
-<td></td>
+<tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.solver.Solver.solve" title="swap_puzzle.solver.Solver.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(g)</p></td>
+<td><p>Solve a grid.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
-<dt class="sig sig-object py" id="swap_puzzle.solver.Solver.get_solution">
-<span class="sig-name descname"><span class="pre">get_solution</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">grid</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><a class="reference internal" href="#swap_puzzle.grid.Grid" title="swap_puzzle.grid.Grid"><span class="pre">Grid</span></a></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#swap_puzzle.solver.Solver.get_solution" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dt class="sig sig-object py" id="swap_puzzle.solver.Solver.solve">
+<span class="sig-name descname"><span class="pre">solve</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">g:</span> <span class="pre">~grid.Grid)</span> <span class="pre">-&gt;</span> <span class="pre">(&lt;class</span> <span class="pre">'int'&gt;,</span> <span class="pre">list[tuple[tuple[int,</span> <span class="pre">int],</span> <span class="pre">tuple[int,</span> <span class="pre">int]]]</span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.solver.Solver.solve" title="Permalink to this definition"></a></dt>
+<dd><p>Solve a grid. Call the callback on each swap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>g: Grid</strong></dt><dd><p>Grid to be solved.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>int</dt><dd><p>Number of swaps made on the grid in order to solve it.</p>
+</dd>
+<dt>list[tuple[tuple[int, int], tuple[int, int]]]</dt><dd><p>List of the swap operated on the grid in order to solve it.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>SolverWorkException</dt><dd><p>Raised if the solver did not successfully solve the puzzle (too many swaps, invalid swap,…)</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 

@@ -7,8 +7,14 @@ class NaiveSolver2(Solver):
     A naive solver, doing swaps of adjacent cases.
     """
 
-    def __init__(self, grid: Grid):
-        super().__init__(grid)
+    def __init__(self, callback: Callable[[list[tuple[tuple[int, int], tuple[int, int]]]], None] = lambda: None) -> None:
+        """
+        Parameters
+        ----------
+        callback: Callable[[list[tuple[tuple[int, int], tuple[int, int]]]], None], optional
+            Function called when a swap is operated on the grid. Default does nothing.
+        """
+        super().__init__("naive", callback=callback)
 
     def get_solution(self) -> None:
         """
@@ -63,7 +69,6 @@ class NaiveSolver2(Solver):
         flat_grid = sum(grid, [])
         return flat_grid
 
-    # TODO: put inside an utils module
     def reverse_arr(self, arr: list):
         """
         Reverses the elements of a list, modifies the list directly.

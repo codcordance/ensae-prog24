@@ -8,6 +8,7 @@ Subpackages
    :maxdepth: 4
 
    swap_puzzle.exception
+   swap_puzzle.solvers
 
 Submodules
 ----------
@@ -32,22 +33,6 @@ swap\_puzzle.main module
 ------------------------
 
 .. automodule:: swap_puzzle.main
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-swap\_puzzle.naivesolver module
--------------------------------
-
-.. automodule:: swap_puzzle.naivesolver
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-swap\_puzzle.naivesolver2 module
---------------------------------
-
-.. automodule:: swap_puzzle.naivesolver2
    :members:
    :undoc-members:
    :show-inheritance:

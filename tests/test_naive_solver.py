@@ -2,10 +2,10 @@ from swap_puzzle import *
 import unittest
 
 
-class Test_Swap(unittest.TestCase):
+class TestSwap(unittest.TestCase):
     def test_naive_solver(self):
-        g = Grid.grid_from_file("source/grid2.in")
-        s = NaiveSolver2(g)
+        g = Grid.grid_from_file("input/grid2.in")
+        NaiveSolver().solve(g)
         # s.get_solution()
 
 

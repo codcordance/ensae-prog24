@@ -4,26 +4,34 @@ swap\_puzzle.exception package
 Submodules
 ----------
 
-swap\_puzzle.exception.InvalidGridException module
---------------------------------------------------
-
-.. automodule:: swap_puzzle.exception.InvalidGridException
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-swap\_puzzle.exception.InvalidPositionException module
+swap\_puzzle.exception.invalid\_grid\_exception module
 ------------------------------------------------------
 
-.. automodule:: swap_puzzle.exception.InvalidPositionException
+.. automodule:: swap_puzzle.exception.invalid_grid_exception
    :members:
    :undoc-members:
    :show-inheritance:
 
-swap\_puzzle.exception.SwapNotAllowedException module
+swap\_puzzle.exception.invalid\_position\_exception module
+----------------------------------------------------------
+
+.. automodule:: swap_puzzle.exception.invalid_position_exception
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+swap\_puzzle.exception.solver\_work\_exception module
 -----------------------------------------------------
 
-.. automodule:: swap_puzzle.exception.SwapNotAllowedException
+.. automodule:: swap_puzzle.exception.solver_work_exception
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+swap\_puzzle.exception.swap\_not\_allowed\_exception module
+-----------------------------------------------------------
+
+.. automodule:: swap_puzzle.exception.swap_not_allowed_exception
    :members:
    :undoc-members:
    :show-inheritance:

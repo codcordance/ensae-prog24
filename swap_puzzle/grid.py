@@ -3,7 +3,6 @@ This is the grid module. It contains the Grid class and its associated methods.
 """
 
 from swap_puzzle import *
-import os
 
 
 class Grid:
@@ -138,18 +137,20 @@ class Grid:
             raise SwapNotAllowedException("the cells are neither on the same line nor on the same column !")
         self.state[i][j], self.state[k][l] = self.state[k][l], self.state[i][j]
 
-    def swap_seq(self, cell_pair_list: list[tuple]) -> None:
+    def swap_seq(self, cell_pair_list: list[tuple[tuple[int, int], tuple[int, int]]]) -> None:
         """
         Executes a sequence of swaps.
 
         Parameters
         ----------
-        cell_pair_list: list[tuple]
+        cell_pair_list: list[tuple[tuple[int, int], tuple[int, int]]]
             The list of swaps, each swap being a tuple of two cells (each
             cell being a tuple of integers).
 
         Raises
         ------
+        InvalidPositionException
+            Raised by the swap method. If one of the given parameters corresponds to an invalid cell coordinates.
         SwapNotAllowedException
             Raised if the given list of swaps is not a valid list of 2-tuples, or if a swap is not allowed.
         """

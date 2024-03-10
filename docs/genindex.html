@@ -79,7 +79,6 @@
  | <a href="#I"><strong>I</strong></a>
  | <a href="#M"><strong>M</strong></a>
  | <a href="#N"><strong>N</strong></a>
- | <a href="#R"><strong>R</strong></a>
  | <a href="#S"><strong>S</strong></a>
  
 </div>
@@ -104,25 +103,17 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="swap_puzzle.html#swap_puzzle.grid.Grid.get_cell">get_cell() (swap_puzzle.grid.Grid method)</a>
 </li>
-      <li><a href="swap_puzzle.html#swap_puzzle.naivesolver.NaiveSolver.get_solution">get_solution() (swap_puzzle.naivesolver.NaiveSolver method)</a>
-
-      <ul>
-        <li><a href="swap_puzzle.html#swap_puzzle.naivesolver2.NaiveSolver2.get_solution">(swap_puzzle.naivesolver2.NaiveSolver2 method)</a>
+      <li><a href="swap_puzzle.solvers.html#swap_puzzle.solvers.deprecated_naivesolver.NaiveSolver.get_solution">get_solution() (swap_puzzle.solvers.deprecated_naivesolver.NaiveSolver method)</a>
 </li>
-        <li><a href="swap_puzzle.html#swap_puzzle.solver.Solver.get_solution">(swap_puzzle.solver.Solver method)</a>
-</li>
-      </ul></li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="swap_puzzle.html#swap_puzzle.graph.Graph">Graph (class in swap_puzzle.graph)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="swap_puzzle.html#swap_puzzle.graph.Graph.graph_from_file">graph_from_file() (swap_puzzle.graph.Graph class method)</a>
 </li>
       <li><a href="swap_puzzle.html#swap_puzzle.grid.Grid">Grid (class in swap_puzzle.grid)</a>
 </li>
       <li><a href="swap_puzzle.html#swap_puzzle.grid.Grid.grid_from_file">grid_from_file() (swap_puzzle.grid.Grid class method)</a>
-</li>
-      <li><a href="swap_puzzle.html#swap_puzzle.naivesolver2.NaiveSolver2.grid_to_arr">grid_to_arr() (swap_puzzle.naivesolver2.NaiveSolver2 method)</a>
 </li>
   </ul></td>
 </tr></table>
@@ -130,14 +121,12 @@
 <h2 id="I">I</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="swap_puzzle.html#swap_puzzle.naivesolver2.NaiveSolver2.insertion_sort">insertion_sort() (swap_puzzle.naivesolver2.NaiveSolver2 method)</a>
+      <li><a href="swap_puzzle.exception.html#swap_puzzle.exception.invalid_grid_exception.InvalidGridException">InvalidGridException</a>
 </li>
-      <li><a href="swap_puzzle.exception.html#swap_puzzle.exception.InvalidGridException.InvalidGridException">InvalidGridException</a>
+      <li><a href="swap_puzzle.exception.html#swap_puzzle.exception.invalid_position_exception.InvalidPositionException">InvalidPositionException</a>
 </li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="swap_puzzle.exception.html#swap_puzzle.exception.InvalidPositionException.InvalidPositionException">InvalidPositionException</a>
-</li>
       <li><a href="swap_puzzle.html#swap_puzzle.grid.Grid.is_coord_2tuple">is_coord_2tuple() (swap_puzzle.grid.Grid method)</a>
 </li>
       <li><a href="swap_puzzle.html#swap_puzzle.grid.Grid.is_sorted">is_sorted() (swap_puzzle.grid.Grid method)</a>
@@ -156,11 +145,13 @@
 </li>
         <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception">swap_puzzle.exception</a>
 </li>
-        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.InvalidGridException">swap_puzzle.exception.InvalidGridException</a>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_grid_exception">swap_puzzle.exception.invalid_grid_exception</a>
 </li>
-        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.InvalidPositionException">swap_puzzle.exception.InvalidPositionException</a>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_position_exception">swap_puzzle.exception.invalid_position_exception</a>
 </li>
-        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.SwapNotAllowedException">swap_puzzle.exception.SwapNotAllowedException</a>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.solver_work_exception">swap_puzzle.exception.solver_work_exception</a>
+</li>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.swap_not_allowed_exception">swap_puzzle.exception.swap_not_allowed_exception</a>
 </li>
         <li><a href="swap_puzzle.html#module-swap_puzzle.graph">swap_puzzle.graph</a>
 </li>
@@ -168,11 +159,13 @@
 </li>
         <li><a href="swap_puzzle.html#module-swap_puzzle.main">swap_puzzle.main</a>
 </li>
-        <li><a href="swap_puzzle.html#module-swap_puzzle.naivesolver">swap_puzzle.naivesolver</a>
-</li>
-        <li><a href="swap_puzzle.html#module-swap_puzzle.naivesolver2">swap_puzzle.naivesolver2</a>
-</li>
         <li><a href="swap_puzzle.html#module-swap_puzzle.solver">swap_puzzle.solver</a>
+</li>
+        <li><a href="swap_puzzle.solvers.html#module-swap_puzzle.solvers">swap_puzzle.solvers</a>
+</li>
+        <li><a href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.deprecated_naivesolver">swap_puzzle.solvers.deprecated_naivesolver</a>
+</li>
+        <li><a href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.naive">swap_puzzle.solvers.naive</a>
 </li>
       </ul></li>
   </ul></td>
@@ -181,33 +174,25 @@
 <h2 id="N">N</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="swap_puzzle.html#swap_puzzle.naivesolver.NaiveSolver">NaiveSolver (class in swap_puzzle.naivesolver)</a>
-</li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="swap_puzzle.html#swap_puzzle.naivesolver2.NaiveSolver2">NaiveSolver2 (class in swap_puzzle.naivesolver2)</a>
-</li>
-  </ul></td>
-</tr></table>
+      <li><a href="swap_puzzle.solvers.html#swap_puzzle.solvers.deprecated_naivesolver.NaiveSolver">NaiveSolver (class in swap_puzzle.solvers.deprecated_naivesolver)</a>
 
-<h2 id="R">R</h2>
-<table style="width: 100%" class="indextable genindextable"><tr>
-  <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="swap_puzzle.html#swap_puzzle.naivesolver2.NaiveSolver2.reverse_arr">reverse_arr() (swap_puzzle.naivesolver2.NaiveSolver2 method)</a>
+      <ul>
+        <li><a href="swap_puzzle.solvers.html#swap_puzzle.solvers.naive.NaiveSolver">(class in swap_puzzle.solvers.naive)</a>
 </li>
+      </ul></li>
   </ul></td>
 </tr></table>
 
 <h2 id="S">S</h2>
 <table style="width: 100%" class="indextable genindextable"><tr>
   <td style="width: 33%; vertical-align: top;"><ul>
-      <li><a href="swap_puzzle.html#swap_puzzle.naivesolver.NaiveSolver.snake">snake() (swap_puzzle.naivesolver.NaiveSolver method)</a>
-
-      <ul>
-        <li><a href="swap_puzzle.html#swap_puzzle.naivesolver2.NaiveSolver2.snake">(swap_puzzle.naivesolver2.NaiveSolver2 method)</a>
+      <li><a href="swap_puzzle.solvers.html#swap_puzzle.solvers.deprecated_naivesolver.NaiveSolver.snake">snake() (swap_puzzle.solvers.deprecated_naivesolver.NaiveSolver method)</a>
 </li>
-      </ul></li>
+      <li><a href="swap_puzzle.html#swap_puzzle.solver.Solver.solve">solve() (swap_puzzle.solver.Solver method)</a>
+</li>
       <li><a href="swap_puzzle.html#swap_puzzle.solver.Solver">Solver (class in swap_puzzle.solver)</a>
+</li>
+      <li><a href="swap_puzzle.exception.html#swap_puzzle.exception.solver_work_exception.SolverWorkException">SolverWorkException</a>
 </li>
       <li><a href="swap_puzzle.html#swap_puzzle.grid.Grid.swap">swap() (swap_puzzle.grid.Grid method)</a>
 </li>
@@ -226,24 +211,31 @@
 </li>
       </ul></li>
       <li>
-    swap_puzzle.exception.InvalidGridException
+    swap_puzzle.exception.invalid_grid_exception
 
       <ul>
-        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.InvalidGridException">module</a>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_grid_exception">module</a>
 </li>
       </ul></li>
       <li>
-    swap_puzzle.exception.InvalidPositionException
+    swap_puzzle.exception.invalid_position_exception
 
       <ul>
-        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.InvalidPositionException">module</a>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_position_exception">module</a>
 </li>
       </ul></li>
       <li>
-    swap_puzzle.exception.SwapNotAllowedException
+    swap_puzzle.exception.solver_work_exception
 
       <ul>
-        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.SwapNotAllowedException">module</a>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.solver_work_exception">module</a>
+</li>
+      </ul></li>
+      <li>
+    swap_puzzle.exception.swap_not_allowed_exception
+
+      <ul>
+        <li><a href="swap_puzzle.exception.html#module-swap_puzzle.exception.swap_not_allowed_exception">module</a>
 </li>
       </ul></li>
   </ul></td>
@@ -270,29 +262,36 @@
 </li>
       </ul></li>
       <li>
-    swap_puzzle.naivesolver
-
-      <ul>
-        <li><a href="swap_puzzle.html#module-swap_puzzle.naivesolver">module</a>
-</li>
-      </ul></li>
-      <li>
-    swap_puzzle.naivesolver2
-
-      <ul>
-        <li><a href="swap_puzzle.html#module-swap_puzzle.naivesolver2">module</a>
-</li>
-      </ul></li>
-      <li>
     swap_puzzle.solver
 
       <ul>
         <li><a href="swap_puzzle.html#module-swap_puzzle.solver">module</a>
 </li>
       </ul></li>
+      <li>
+    swap_puzzle.solvers
+
+      <ul>
+        <li><a href="swap_puzzle.solvers.html#module-swap_puzzle.solvers">module</a>
+</li>
+      </ul></li>
+      <li>
+    swap_puzzle.solvers.deprecated_naivesolver
+
+      <ul>
+        <li><a href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.deprecated_naivesolver">module</a>
+</li>
+      </ul></li>
+      <li>
+    swap_puzzle.solvers.naive
+
+      <ul>
+        <li><a href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.naive">module</a>
+</li>
+      </ul></li>
       <li><a href="swap_puzzle.html#swap_puzzle.grid.Grid.swap_seq">swap_seq() (swap_puzzle.grid.Grid method)</a>
 </li>
-      <li><a href="swap_puzzle.exception.html#swap_puzzle.exception.SwapNotAllowedException.SwapNotAllowedException">SwapNotAllowedException</a>
+      <li><a href="swap_puzzle.exception.html#swap_puzzle.exception.swap_not_allowed_exception.SwapNotAllowedException">SwapNotAllowedException</a>
 </li>
   </ul></td>
 </tr></table>
