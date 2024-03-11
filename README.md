@@ -2,6 +2,7 @@
 
 ## LARTIGAU Théo & SIAHAAN--GENSOLLEN Rémy
 
-Public repository with students resources for the ENSAE 1A programming project 2023-24 on the swap puzzle. 
+Repository on LARTIGAU Théo & SIAHAAN--GENSOLLEN Rémy work on the ENSAE 1A programming project 2023-24 on the swap puzzle.
 
-Please refer to the PDF description for a description of the files format and structure.
+### Sphinx generated documentation is available [here](codcordance.github.io/ensae-prog24/).
+
