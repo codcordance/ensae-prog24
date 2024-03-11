@@ -4,7 +4,7 @@
   <meta charset="utf-8" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>swap_puzzle package &mdash; ensae-prog24  documentation</title>
+  <title>swap_puzzle package &mdash; ENSAE - Programming Project 2024 (Swap Puzzle)  documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
       <link rel="stylesheet" type="text/css" href="_static/css/theme.css" />
 
@@ -22,7 +22,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="swap_puzzle.exception package" href="swap_puzzle.exception.html" />
-    <link rel="prev" title="Welcome to ensae-prog24 swap-puzzle’s documentation!" href="index.html" /> 
+    <link rel="prev" title="Documentation of ENSAE - Programming Project 2024 (Swap Puzzle) - Remy SIAHAAN–GENSOLLEN &amp; Theo LARTIGAU" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -34,7 +34,7 @@
           
           
           <a href="index.html" class="icon icon-home">
-            ensae-prog24
+            ENSAE - Programming Project 2024 (Swap Puzzle)
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
@@ -44,7 +44,7 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+              <p class="caption" role="heading"><span class="caption-text">SIAHAAN--GENSOLLEN Rémy &amp; LARTIGAU Théo</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">swap_puzzle package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#subpackages">Subpackages</a><ul>
@@ -53,6 +53,7 @@
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.game">swap_puzzle.game module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.graph">swap_puzzle.graph module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.grid">swap_puzzle.grid module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#module-swap_puzzle.main">swap_puzzle.main module</a></li>
@@ -69,7 +70,7 @@
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
           <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="index.html">ensae-prog24</a>
+          <a href="index.html">ENSAE - Programming Project 2024 (Swap Puzzle)</a>
       </nav>
 
       <div class="wy-nav-content">
@@ -95,6 +96,7 @@
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="swap_puzzle.exception.html">swap_puzzle.exception package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.a_star_no_path_exception">swap_puzzle.exception.a_star_no_path_exception module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.bfs_no_path_exception">swap_puzzle.exception.bfs_no_path_exception module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_grid_exception">swap_puzzle.exception.invalid_grid_exception module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.exception.html#module-swap_puzzle.exception.invalid_position_exception">swap_puzzle.exception.invalid_position_exception module</a></li>
@@ -105,9 +107,8 @@
 </li>
 <li class="toctree-l1"><a class="reference internal" href="swap_puzzle.solvers.html">swap_puzzle.solvers package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.a_star">swap_puzzle.solvers.a_star module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.bfs">swap_puzzle.solvers.bfs module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.deprecated_naivesolver">swap_puzzle.solvers.deprecated_naivesolver module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#swap-puzzle-solvers-deprecated-naivesolver2-module">swap_puzzle.solvers.deprecated_naivesolver2 module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers.naive">swap_puzzle.solvers.naive module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="swap_puzzle.solvers.html#module-swap_puzzle.solvers">Module contents</a></li>
 </ul>
@@ -117,6 +118,10 @@
 </section>
 <section id="submodules">
 <h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this heading"></a></h2>
+</section>
+<section id="module-swap_puzzle.game">
+<span id="swap-puzzle-game-module"></span><h2>swap_puzzle.game module<a class="headerlink" href="#module-swap_puzzle.game" title="Permalink to this heading"></a></h2>
+<p>Main pygame module</p>
 </section>
 <section id="module-swap_puzzle.graph">
 <span id="swap-puzzle-graph-module"></span><h2>swap_puzzle.graph module<a class="headerlink" href="#module-swap_puzzle.graph" title="Permalink to this heading"></a></h2>
@@ -151,6 +156,14 @@ When adding an edge between two nodes, if one of the ones does not exist it is a
 <dt class="sig sig-object py" id="swap_puzzle.graph.Graph.bfs">
 <span class="sig-name descname"><span class="pre">bfs</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">src</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dst</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.graph.Graph.bfs" title="Permalink to this definition"></a></dt>
 <dd><p>Finds a shortest path from src to dst by BFS.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt>BFSNoPathException</dt><dd><p>Raised if dst is not reachable from src.</p>
+</dd>
+</dl>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -347,6 +360,9 @@ of steps.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.solver.Solver.solve" title="swap_puzzle.solver.Solver.solve"><code class="xref py py-obj docutils literal notranslate"><span class="pre">solve</span></code></a>(g[, init_acc])</p></td>
 <td><p>Solve a grid.</p></td>
 </tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#swap_puzzle.solver.Solver.work" title="swap_puzzle.solver.Solver.work"><code class="xref py py-obj docutils literal notranslate"><span class="pre">work</span></code></a>(m, n, state, acc)</p></td>
+<td><p>Function to be implemented in the solver.</p></td>
+</tr>
 </tbody>
 </table>
 <dl class="py method">
@@ -379,6 +395,36 @@ of steps.</p>
 </dl>
 </dd></dl>
 
+<dl class="py method">
+<dt class="sig sig-object py" id="swap_puzzle.solver.Solver.work">
+<em class="property"><span class="pre">abstract</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">work</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">m:</span> <span class="pre">int,</span> <span class="pre">n:</span> <span class="pre">int,</span> <span class="pre">state:</span> <span class="pre">list[list[int]],</span> <span class="pre">acc:</span> <span class="pre">object)</span> <span class="pre">-&gt;</span> <span class="pre">(list[tuple[tuple[int,</span> <span class="pre">int],</span> <span class="pre">tuple[int,</span> <span class="pre">int]]],</span> <span class="pre">&lt;class</span> <span class="pre">'object'&gt;</span></em><span class="sig-paren">)</span><a class="headerlink" href="#swap_puzzle.solver.Solver.work" title="Permalink to this definition"></a></dt>
+<dd><p>Function to be implemented in the solver. Take the information of a grid (not the grid object itself)
+and returns a list of 2-tuple of coordinates representing the swaps to be made on the grid.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>m: int</strong></dt><dd></dd>
+<dt><strong>Number of lines in the grid</strong></dt><dd></dd>
+<dt><strong>n: int</strong></dt><dd><p>Number of columns in the grid</p>
+</dd>
+<dt><strong>state: State</strong></dt><dd><p>The state of the grid, a list of list such that state[i][j] is the number in the cell (i, j), i.e., in the
+i-th line and j-th column.</p>
+</dd>
+<dt><strong>acc: object</strong></dt><dd><p>The accumulator.</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[tuple[Coordinates, Coordinates]]</dt><dd><p>List of 2-tuple of coordinates representing the swaps to be made on the grid.</p>
+</dd>
+<dt>any</dt><dd><p>The updated accumulator</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
 </dd></dl>
 
 </section>
@@ -392,6 +438,18 @@ of steps.</p>
 <p class="rubric">Methods</p>
 <table class="autosummary longtable docutils align-default">
 <tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.sp_utils.SPUtils.adjacent" title="swap_puzzle.sp_utils.SPUtils.adjacent"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacent</span></code></a>(i, j, k, l[, raiser])</p></td>
+<td><p>Check if two cells are adjacent to each other (on the same line or the same column)</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#swap_puzzle.sp_utils.SPUtils.cell_difference" title="swap_puzzle.sp_utils.SPUtils.cell_difference"><code class="xref py py-obj docutils literal notranslate"><span class="pre">cell_difference</span></code></a>(s1, s2)</p></td>
+<td><p>Check the cell differences between two states.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.sp_utils.SPUtils.dict_possible_states" title="swap_puzzle.sp_utils.SPUtils.dict_possible_states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">dict_possible_states</span></code></a>(m, n)</p></td>
+<td><p>Get a dictionary of the possible states of a grid of m x n.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#swap_puzzle.sp_utils.SPUtils.neighbour_states" title="swap_puzzle.sp_utils.SPUtils.neighbour_states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">neighbour_states</span></code></a>(s1, s2)</p></td>
+<td><p>Check if two states are neighbours, i.e. if you can go from one to the other with one permitted swap.</p></td>
+</tr>
 <tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.sp_utils.SPUtils.permutations" title="swap_puzzle.sp_utils.SPUtils.permutations"><code class="xref py py-obj docutils literal notranslate"><span class="pre">permutations</span></code></a>(l)</p></td>
 <td><p>Recursive function to generate permutations of a given list.</p></td>
 </tr>
@@ -401,46 +459,109 @@ of steps.</p>
 <tr class="row-odd"><td><p><a class="reference internal" href="#swap_puzzle.sp_utils.SPUtils.str_to_state" title="swap_puzzle.sp_utils.SPUtils.str_to_state"><code class="xref py py-obj docutils literal notranslate"><span class="pre">str_to_state</span></code></a>(s)</p></td>
 <td><p>Converts a string into a state.</p></td>
 </tr>
-</tbody>
-</table>
-<table class="docutils align-default">
-<tbody>
-<tr class="row-odd"><td><p><strong>adjacent</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>cell_difference</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>dict_possible_states</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><strong>neighbour_states</strong></p></td>
-<td></td>
-</tr>
-<tr class="row-odd"><td><p><strong>swap_between_states</strong></p></td>
-<td></td>
+<tr class="row-even"><td><p><a class="reference internal" href="#swap_puzzle.sp_utils.SPUtils.swap_between_states" title="swap_puzzle.sp_utils.SPUtils.swap_between_states"><code class="xref py py-obj docutils literal notranslate"><span class="pre">swap_between_states</span></code></a>(s1, s2)</p></td>
+<td><p>Get the swap to go from a state to a neighboor state.</p></td>
 </tr>
 </tbody>
 </table>
 <dl class="py method">
 <dt class="sig sig-object py" id="swap_puzzle.sp_utils.SPUtils.adjacent">
-<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adjacent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raiser</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#swap_puzzle.sp_utils.SPUtils.adjacent" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">adjacent</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">i</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">j</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">k</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">l</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">raiser</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#swap_puzzle.sp_utils.SPUtils.adjacent" title="Permalink to this definition"></a></dt>
+<dd><p>Check if two cells are adjacent to each other (on the same line or the same column)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>i: int</strong></dt><dd><p>First cell line</p>
+</dd>
+<dt><strong>j: int</strong></dt><dd><p>First cell column</p>
+</dd>
+<dt><strong>k: int</strong></dt><dd><p>Second cell line</p>
+</dd>
+<dt><strong>l: int</strong></dt><dd><p>Second cell column</p>
+</dd>
+<dt><strong>raiser:</strong></dt><dd><p>If True, then if the cells are not adjacent an exception will be raised. Il False, then it returns
+if the cells are adjacent.</p>
+</dd>
+<dt><strong>Returns</strong></dt><dd></dd>
+<dt><strong>——-</strong></dt><dd></dd>
+<dt><strong>bool</strong></dt><dd><p>When raiser is False, equals to True if the cells are adjacent (false otherwise).</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>SwapNotAllowedException</dt><dd><p>if two cells are not adjacent and raiser is True</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="swap_puzzle.sp_utils.SPUtils.cell_difference">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">cell_difference</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#swap_puzzle.sp_utils.SPUtils.cell_difference" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Check the cell differences between two states.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s1: state</strong></dt><dd><p>The first state</p>
+</dd>
+<dt><strong>s2: state</strong></dt><dd><p>The second state</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>list[cell]</dt><dd><p>The list of differences</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="swap_puzzle.sp_utils.SPUtils.dict_possible_states">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">dict_possible_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">m</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">n</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#swap_puzzle.sp_utils.SPUtils.dict_possible_states" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Get a dictionary of the possible states of a grid of m x n. The keys are the states converted to string.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>m: int</strong></dt><dd><p>Number of lines in the grid</p>
+</dd>
+<dt><strong>n: int</strong></dt><dd><p>Number of columns in the grid</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>dict[str, state]</dt><dd><p>Dictionary of the possible states.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="swap_puzzle.sp_utils.SPUtils.neighbour_states">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">neighbour_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="headerlink" href="#swap_puzzle.sp_utils.SPUtils.neighbour_states" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Check if two states are neighbours, i.e. if you can go from one to the other with one permitted swap.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s1: state</strong></dt><dd><p>First state</p>
+</dd>
+<dt><strong>s2: state</strong></dt><dd><p>Second state</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>bool</dt><dd><p>True if the states are neighbours (false otherwise).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="swap_puzzle.sp_utils.SPUtils.permutations">
@@ -507,7 +628,24 @@ For instance, ‘1,2,3;4,5,6;7,8,9’ is converted into [[1, 2, 3], [4, 5, 6], [
 <dl class="py method">
 <dt class="sig sig-object py" id="swap_puzzle.sp_utils.SPUtils.swap_between_states">
 <em class="property"><span class="pre">static</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">swap_between_states</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">s1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s2</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">tuple</span><span class="p"><span class="pre">[</span></span><span class="pre">int</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">int</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="headerlink" href="#swap_puzzle.sp_utils.SPUtils.swap_between_states" title="Permalink to this definition"></a></dt>
-<dd></dd></dl>
+<dd><p>Get the swap to go from a state to a neighboor state. The two states must be neighbours.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><dl class="simple">
+<dt><strong>s1: state</strong></dt><dd><p>First state</p>
+</dd>
+<dt><strong>s2: state</strong></dt><dd><p>Second state</p>
+</dd>
+</dl>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><dl class="simple">
+<dt>tuple[cell, cell]</dt><dd><p>The swap between the two states.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
 
 </dd></dl>
 
@@ -522,7 +660,7 @@ For instance, ‘1,2,3;4,5,6;7,8,9’ is converted into [[1, 2, 3], [4, 5, 6], [
            </div>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
-        <a href="index.html" class="btn btn-neutral float-left" title="Welcome to ensae-prog24 swap-puzzle’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="index.html" class="btn btn-neutral float-left" title="Documentation of ENSAE - Programming Project 2024 (Swap Puzzle) - Remy SIAHAAN–GENSOLLEN &amp; Theo LARTIGAU" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
         <a href="swap_puzzle.exception.html" class="btn btn-neutral float-right" title="swap_puzzle.exception package" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 

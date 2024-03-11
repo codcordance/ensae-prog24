@@ -96,10 +96,15 @@ class Graph:
         dst: NodeType
             The destination node.
 
-        Output: 
+        Output
         -------
         path: list[NodeType] | None
             The shortest path from src to dst. Returns None if dst is not reachable from src
+
+        Raises
+        ------
+        BFSNoPathException
+            Raised if dst is not reachable from src.
         """
         visited = {src: None}  # already visited nodes
         queue = deque([src])  # queue of nodes
@@ -111,7 +116,9 @@ class Graph:
                 while node is not None:
                     path.append(node)
                     node = visited[node]
-                return path[::-1]  # Reverse the path, for it to be from src to dst
+                return [*reversed(path)]  # Reverse the path, for it to be from src to dst
+                # changed to reversed and argument unpacking for optimization. reversed operates in O(1) time & space
+                # complexity
             for neighbor in self.graph[node]:
                 if neighbor not in visited:
                     visited[neighbor] = node

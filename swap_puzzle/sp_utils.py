@@ -8,7 +8,33 @@ from swap_puzzle import *
 class SPUtils:
 
     @staticmethod
-    def adjacent(i: int, j: int, k: int, l: int, raiser=False) -> bool:
+    def adjacent(i: int, j: int, k: int, l: int, raiser: bool = False) -> bool:
+        """
+        Check if two cells are adjacent to each other (on the same line or the same column)
+
+        Parameters
+        ----------
+        i: int
+            First cell line
+        j: int
+            First cell column
+        k: int
+            Second cell line
+        l: int
+            Second cell column
+        raiser:
+            If True, then if the cells are not adjacent an exception will be raised. Il False, then it returns
+            if the cells are adjacent.
+        Returns
+        -------
+        bool
+            When raiser is False, equals to True if the cells are adjacent (false otherwise).
+
+        Raises
+        ------
+        SwapNotAllowedException
+            if two cells are not adjacent and raiser is True
+        """
         if i == k:
             if l - j not in (1, -1):
                 if raiser:
@@ -27,6 +53,21 @@ class SPUtils:
 
     @staticmethod
     def cell_difference(s1: state, s2: state) -> list[cell]:
+        """
+        Check the cell differences between two states.
+
+        Parameters
+        ----------
+        s1: state
+            The first state
+        s2: state
+            The second state
+
+        Returns
+        -------
+        list[cell]
+            The list of differences
+        """
         diff = []
         for i in range(len(s1)):
             for j in range(len(s1[0])):
@@ -36,6 +77,21 @@ class SPUtils:
 
     @staticmethod
     def neighbour_states(s1: state, s2: state) -> bool:
+        """
+        Check if two states are neighbours, i.e. if you can go from one to the other with one permitted swap.
+
+        Parameters
+        ----------
+        s1: state
+            First state
+        s2: state
+            Second state
+
+        Returns
+        -------
+        bool
+            True if the states are neighbours (false otherwise).
+        """
         diff = SPUtils.cell_difference(s1, s2)
         if len(diff) != 2: return False
         for i in diff:
@@ -46,6 +102,21 @@ class SPUtils:
 
     @staticmethod
     def swap_between_states(s1: state, s2: state) -> tuple[cell, cell]:
+        """
+        Get the swap to go from a state to a neighboor state. The two states must be neighbours.
+
+        Parameters
+        ----------
+        s1: state
+            First state
+        s2: state
+            Second state
+
+        Returns
+        -------
+        tuple[cell, cell]
+            The swap between the two states.
+        """
         diff = SPUtils.cell_difference(s1, s2)
         return diff[0], diff[1]
 
@@ -76,6 +147,21 @@ class SPUtils:
 
     @staticmethod
     def dict_possible_states(m: int, n: int) -> dict[str, state]:
+        """
+        Get a dictionary of the possible states of a grid of m x n. The keys are the states converted to string.
+
+        Parameters
+        ----------
+         m: int
+            Number of lines in the grid
+        n: int
+            Number of columns in the grid
+
+        Returns
+        -------
+        dict[str, state]
+            Dictionary of the possible states.
+        """
         mn = m * n
         states = SPUtils.permutations(list(range(1, mn + 1)))
         states = [[s[i:i + n] for i in range(0, mn, n)] for s in states]

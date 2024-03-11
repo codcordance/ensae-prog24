@@ -3,10 +3,10 @@ from swap_puzzle import *
 
 class NaiveSolver(Solver):
     """
-    A naive solver, doing swaps of adjacent cases.
+    A naive solver, doing swaps of adjacent cases. Detailled in the report.
     """
 
-    def _work(self, m: int, n: int, state: state, acc: object) -> (list[tuple[cell, cell]], object):
+    def work(self, m: int, n: int, state: state, acc: object) -> (list[tuple[cell, cell]], object):
         """
         Parameters
         ----------
@@ -24,7 +24,7 @@ class NaiveSolver(Solver):
 
             # order computes the "snake order". For instance, in a 3 by 3 grid, the custom order is
             # 0 < 1 < 2 < 5 < 4 < 3 < 6 < 7 < 8
-            order = [i*n + j for i in range(m) for j in (reversed(range(n)) if i%2 else range(n))]
+            order = [i * n + j for i in range(m) for j in (reversed(range(n)) if i % 2 else range(n))]
         else:
             flatten, order = acc
 
@@ -41,7 +41,7 @@ class NaiveSolver(Solver):
             cell
                 A cell in the grid
             """
-            i, j = k // m, k % m
+            i, j = k // n, k % n
             j = n - 1 - j if i % 2 else j
             return i, j
 
@@ -59,7 +59,7 @@ class NaiveSolver(Solver):
             bool
                 True if i >= j in the custom order (false otherwise)
             """
-            return order[i-1] >= order[j-1]
+            return order[i - 1] >= order[j - 1]
 
         for i in range(m * n - 1):
             if geq_custom_order(flatten[i], flatten[i + 1]):

@@ -2,7 +2,7 @@ from swap_puzzle import *
 import unittest
 
 
-class TestSwap(unittest.TestCase):
+class TestBFSSolver(unittest.TestCase):
 
     def test_graph1(self):
         g = Graph.graph_from_file("input/graph1.in")

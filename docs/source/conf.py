@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.abspath(os.path.join('../../..', '..', 'swap_puzzle')
 
 # -- Project information -----------------------------------------------------
 
-project = 'ensae-prog24'
+project = 'ENSAE - Programming Project 2024 (Swap Puzzle)'
 copyright = '2024, Remy SIAHAAN--GENSOLLEN, Theo LARTIGAU'
 author = 'Remy SIAHAAN--GENSOLLEN, Theo LARTIGAU'
 

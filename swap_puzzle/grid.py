@@ -44,12 +44,12 @@ class Grid:
         if not (isinstance(m, int) and isinstance(n, int) and m >= 1 and n >= 1):
             raise InvalidGridException("Wrong dimensions")
 
-        self.m: int = m
-        self.n: int = n
+        self.m = m
+        self.n = n
         if not initial_state:
             # changed list(range(...)) to use the argument unpacking operator *range
             initial_state = [[*range(i * n + 1, (i + 1) * n + 1)] for i in range(m)]
-        self.state: state = initial_state
+        self.state = initial_state
 
     def __str__(self) -> str:
         """
@@ -58,7 +58,7 @@ class Grid:
         str
             Returns the state of the grid as text.
         """
-        output: str = f"The grid is in the following state:\n"
+        output = f"The grid is in the following state:\n"
         for i in range(self.m):
             output += f"{self.state[i]}\n"
         return output
@@ -82,7 +82,8 @@ class Grid:
             True if the grid is sorted (false otherwise)
         """
         # changed ==list(range) to use the argument unpacking operator *range
-        return sum(self.state, []) == [*range(1, self.m * self.n + 1)]
+        # changed to list comprehension, more memory efficient
+        return [c for l in self.state for c in l] == [*range(1, self.m * self.n + 1)]
 
     def is_valid_cell(self, obj: object) -> bool:
         """
@@ -181,7 +182,7 @@ class Grid:
         InvalidPositionException
             Raised if the given cell is invalid
         """
-        t: (int, int) = (i, j)
+        t = (i, j)
         if not self.is_valid_cell(t):
             raise InvalidPositionException(f"{(i, j)}")
         return self.state[i][j]

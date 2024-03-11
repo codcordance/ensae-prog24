@@ -4,26 +4,18 @@ swap\_puzzle.solvers package
 Submodules
 ----------
 
+swap\_puzzle.solvers.a\_star module
+-----------------------------------
+
+.. automodule:: swap_puzzle.solvers.a_star
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 swap\_puzzle.solvers.bfs module
 -------------------------------
 
 .. automodule:: swap_puzzle.solvers.bfs
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-swap\_puzzle.solvers.deprecated\_naivesolver module
----------------------------------------------------
-
-.. automodule:: swap_puzzle.solvers.deprecated_naivesolver
-   :members:
-   :undoc-members:
-   :show-inheritance:
-
-swap\_puzzle.solvers.deprecated\_naivesolver2 module
-----------------------------------------------------
-
-.. automodule:: swap_puzzle.solvers.deprecated_naivesolver2
    :members:
    :undoc-members:
    :show-inheritance:

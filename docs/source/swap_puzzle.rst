@@ -13,6 +13,14 @@ Subpackages
 Submodules
 ----------
 
+swap\_puzzle.game module
+------------------------
+
+.. automodule:: swap_puzzle.game
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 swap\_puzzle.graph module
 -------------------------
 

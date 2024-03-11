@@ -36,7 +36,7 @@ class Solver(ABC):
         self.callback: Callable[[list[tuple[cell, cell]]], None] = callback
 
     @abstractmethod
-    def _work(self, m: int, n: int, state: state, acc: object) -> (list[tuple[cell, cell]], object):
+    def work(self, m: int, n: int, state: state, acc: object) -> (list[tuple[cell, cell]], object):
         """
         Function to be implemented in the solver. Take the information of a grid (not the grid object itself)
         and returns a list of 2-tuple of coordinates representing the swaps to be made on the grid.
@@ -97,7 +97,7 @@ class Solver(ABC):
                 return n, swaps
 
             try:
-                call_swaps, acc = self._work(g.m, g.n, g.state, acc)
+                call_swaps, acc = self.work(g.m, g.n, g.state, acc)
                 i = len(call_swaps)
                 if i < 1:
                     raise SolverWorkException(self.name, f"Solver did not provide any swap, but the grid is not sorted !")

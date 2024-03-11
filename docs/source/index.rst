@@ -3,12 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to ensae-prog24 swap-puzzle's documentation!
+Documentation of ENSAE - Programming Project 2024 (Swap Puzzle)
 ========================================
 
 .. toctree::
    :maxdepth: 4
-   :caption: Contents:
+   :caption: SIAHAAN--GENSOLLEN Rémy & LARTIGAU Théo
 
    swap_puzzle
 

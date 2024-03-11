@@ -2,7 +2,7 @@ from swap_puzzle import *
 import unittest
 
 
-class TestSwap(unittest.TestCase):
+class TestBFSSolver(unittest.TestCase):
 
     def test_grid0(self):
         g = Grid.grid_from_file("input/grid0.in")
